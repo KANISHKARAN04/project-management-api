@@ -21,10 +21,16 @@ app.use(cors({
 //import the routes
 import healthcheck from "./routes/healthcheck.routes.js";
 import authRouter from "./routes/auth.routes.js";
+import projectRouter from "./routes/project.routes.js";
+import taskRouter from "./routes/task.routes.js";
+import noteRouter from "./routes/note.routes.js";
 
 
 app.use("/api/v1/healthcheck",healthcheck);
 app.use("/api/v1/auth",authRouter);
+app.use("/api/v1/projects",projectRouter);
+app.use("/api/v1/projects",taskRouter);
+app.use("/api/v1/projects",noteRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello');
